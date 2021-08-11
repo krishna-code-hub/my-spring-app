@@ -50,6 +50,6 @@ site_config {
     linux_fx_version = "JAVA|11-java11"
   }
 tags = {
-    environment = "dev"
+    environment = "dev1"
   }
 }
