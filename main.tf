@@ -2,8 +2,8 @@ terraform {
   backend "azurerm" {
     resource_group_name  = "githubdemo"
     storage_account_name = "strgaccttf1141"
-    container_name       = "terraformgithubexample"
-    key                  = "terraformgithubexample.tfstate"
+    container_name       = "tfstatedevops"
+    key                  = "tfstatedevops.tfstate"
   }
 }
 
