@@ -1,14 +1,20 @@
 terraform {
-  backend "remote" {
-    # The name of your Terraform Cloud organization.
-    organization = "krishna-tfcloud"
-
-    # The name of the Terraform Cloud workspace to store Terraform state files in.
-    workspaces {
-      name = "my-spring-app"
-    }
+  backend "azurerm" {
+    resource_group_name  = "githubwfdemo"
+    storage_account_name = "strgaccttf1141"
+    container_name       = "terraformgithubexample"
+    key                  = "terraformgithubexample.tfstate"
   }
 }
+ 
+provider "azurerm" {
+  # The "feature" block is required for AzureRM provider 2.x.
+  # If you're using version 1.x, the "features" block is not allowed.
+  version = "~>2.0"
+  features {}
+}
+ 
+data "azurerm_client_config" "current" {}
 
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
