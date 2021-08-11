@@ -6,7 +6,8 @@ terraform {
     key                  = "terraformgithubexample.tfstate"
   }
 }
- 
+
+# Configure the Microsoft Azure Provider
 provider "azurerm" {
   # The "feature" block is required for AzureRM provider 2.x.
   # If you're using version 1.x, the "features" block is not allowed.
@@ -15,11 +16,6 @@ provider "azurerm" {
 }
  
 data "azurerm_client_config" "current" {}
-
-# Configure the Microsoft Azure Provider
-provider "azurerm" {
-  features {}
-}
 
 # Create a resource group
 resource "azurerm_resource_group" "dev-rg" {
