@@ -1,11 +1,12 @@
-# Terraform Settings Block
 terraform {
-  required_version = ">= 1.0.0"
-  required_providers {
-    azurerm = {
-      source = "hashicorp/azurerm"
-      version = ">= 2.0" # Optional but recommended in production
-    }    
+  backend "remote" {
+    # The name of your Terraform Cloud organization.
+    organization = "krishna-tfcloud"
+
+    # The name of the Terraform Cloud workspace to store Terraform state files in.
+    workspaces {
+      name = "my-spring-app"
+    }
   }
 }
 
